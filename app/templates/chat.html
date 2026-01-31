@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ralph AI Chat</title>
+</head>
+<body>
+    <h2>Ralph AI</h2>
+
+    <div id="chat-box"></div>
+
+    <input id="user-input" placeholder="Enter reaction details..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
