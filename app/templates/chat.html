@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ralph AI Chat</title>
+    <meta charset="UTF-8">
+    <title>Ralph AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h2>Ralph AI</h2>
 
-    <div id="chat-box"></div>
+<div class="app-container">
 
-    <input id="user-input" placeholder="Enter reaction details..." />
-    <button onclick="sendMessage()">Send</button>
+    <!-- Sidebar / Toggle -->
+    <!-- <aside class="sidebar">
+        <h1>Ralph AI</h1>
+    </aside> -->
 
-    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <!-- Chat Area -->
+    <main class="chat-container">
+        <div id="chat-box" class="chat-box"></div>
+
+        <div class="chat-input">
+            <input id="user-input" placeholder="Describe chemical reaction..." />
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
 </body>
 </html>

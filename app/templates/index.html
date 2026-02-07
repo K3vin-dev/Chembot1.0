@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ralph AI</title>
+  <meta charset="UTF-8" />
+  <title>Chem Bot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <h1>Welcome to Chembot AI</h1>
-    <p>AI-powered chemical reaction simulation</p>
+<body class="gradient-bg">
+
+  <!-- Logo -->
+  <div class="logo">
+    ⚗️ <span>Chem Bot</span>
+  </div>
+
+  <!-- Main Content -->
+  <div class="center-content">
+    <h1>Hello John Dow</h1>
+    <p class="subtitle">
+      Welcome to Chem Bot, your personal chemical reaction simulator<br>
+      input the chemicals below
+    </p>
+
+    <h3 class="history-title">Quick History</h3>
+
+    <div class="history-cards">
+      <div class="card">Last Searched<br>Reaction</div>
+      <div class="card">Last 2 Searched<br>Reaction</div>
+      <div class="card">Last 3 Searched<br>Reaction</div>
+    </div>
+  </div>
+
+  <!-- Input Bar -->
+  <div class="input-bar">
+    <button class="add-btn">+</button>
+    <input type="text" placeholder="Input chemicals..." />
+    <button class="send-btn">→</button>
+  </div>
+
 </body>
 </html>

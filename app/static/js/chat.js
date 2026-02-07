@@ -1,21 +1,21 @@
 function sendMessage() {
-    const input = document.getElementById("user-input");
-    const message = input.value;
+  const input = document.getElementById("user-input");
+  const message = input.value;
+  if (!message) return;
 
-    if (!message) return;
+  fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message })
+  })
+  .then(res => res.json())
+  .then(data => {
+    const chatBox = document.getElementById("chat-box");
 
-    fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: message })
-    })
-    .then(res => res.json())
-    .then(data => {
-        const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML += `<div class="message user">${message}</div>`;
+    chatBox.innerHTML += `<div class="message ai">${data.response}</div>`;
 
-        chatBox.innerHTML += `<p><b>You:</b> ${message}</p>`;
-        chatBox.innerHTML += `<p><b>Ralph AI:</b> ${data.response}</p>`;
-
-        input.value = "";
-    });
+    chatBox.scrollTop = chatBox.scrollHeight;
+    input.value = "";
+  });
 }
